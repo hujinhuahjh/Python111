@@ -1,0 +1,10 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoImportCompletions": false,
+    "python.analysis.extraPaths": [
+        "D:\\app\\anaconda3\\envs\\test1\\lib\\site-packages",
+        "D:\\app\\Anaconda3\\Lib\\site-packages",
+        "F:\\Program Files\\Python311\\Lib\\site-packages"
+    ],
+    "python.languageServer": "Jedi"
+}
