@@ -14,4 +14,4 @@ def count_deaf_rats(town):
         i += 2
     return sums
 
-print(count_deaf_rats("~O~O~O~O P"))
+print(count_deaf_rats("~O~O~O~OP~O~OO~"))

@@ -9,4 +9,4 @@ def tower_builder(n_floors):
         s = '*'
     return l
 
-print(tower_builder(2))
+print(tower_builder(3))
