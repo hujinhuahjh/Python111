@@ -8,4 +8,4 @@ def solution(number):
             sums += number
     return sums
 
-print(solution(6))
+print(solution(10))
