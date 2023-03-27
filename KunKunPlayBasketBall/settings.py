@@ -29,7 +29,7 @@ class Settings:
     # 重置游戏设置
     def initialize_dynamic_settings(self):
         self.kun_speed = 1.5
-        self.bullet_speed = 1
+        self.bullet_speed = 1.2
         self.ji_speed = 0.25
         
         self.fleet_direction = 1
