@@ -17,6 +17,9 @@ class JiInvasion:
     def __init__(self):
     # 初始化游戏并创建游戏资源
         pygame.init()
+        pygame.mixer.init()
+        self.s = 'KunKunPlayBasketBall/sound'
+        
         self.settings = Settings()
         #绘制游戏窗口
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
@@ -109,6 +112,10 @@ class JiInvasion:
     def _check_play_button(self, mouse_pos):
         button_clicked = self.play_button.rect.collidepoint(mouse_pos)
         if button_clicked and not self.stats.game_active:
+            
+            # 音效
+            self._play_music('bcm.mp3', 0.5, -1)
+            
             # 重置游戏统计信息
             self.settings.initialize_dynamic_settings()
             self.stats.reset_stats()
@@ -212,6 +219,10 @@ class JiInvasion:
 
     # 响应坤坤被鸡群撞到
     def _kun_hit(self):
+        
+        # 音效
+        self._play_music('ngm.mp3', 1, 1)
+        
         if self.stats.kuns_left > 0:
             # 坤坤生命值减1
             self.stats.kuns_left -= 1
@@ -227,6 +238,9 @@ class JiInvasion:
             self._create_fleet()
             self.kun.center_kun()
             sleep(1)
+            
+            # 音效
+            self._play_music('bcm.mp3', 0.5, -1)
         else:
             self.stats.game_active = False
             pygame.mouse.set_visible(True)
@@ -255,11 +269,16 @@ class JiInvasion:
         #     self._create_fleet()
         self._check_bullet_ji_collisions()
         
+    def _play_music(self, which, volume, times):
+        # 音效
+        pygame.mixer.music.load(self.s + '/' + which)
+        pygame.mixer.music.set_volume(volume)
+        pygame.mixer.music.play(times)
     
     # 更新屏幕图像
     def _update_screen(self):
-        # self.screen.fill(self.settings.bg_color)
         # 重绘屏幕
+        # self.screen.fill(self.settings.bg_color)
         self.screen.blit(self.background, (0, 0))
         self.kun.blitme()
         for bullet in self.bullets.sprites():
