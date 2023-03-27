@@ -29,7 +29,7 @@ class User:
             if self.rank < 0:
                 flag = True
             self.rank += int(self.progress / 100)
-            if self.rank >=0 & flag:
+            if self.rank >=0 and flag:
                 self.rank += 1
             self.progress %= 100
             

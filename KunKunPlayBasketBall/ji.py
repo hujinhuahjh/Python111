@@ -15,13 +15,14 @@ class Ji(Sprite):
         self.image = pygame.transform.smoothscale(self.image, (50, 50))
         self.rect = self.image.get_rect()
         
-        # 每只最初鸡都在屏幕左上角附近
+        # 每只鸡最初都在屏幕左上角附近
         self.rect.x = self.rect.width
         self.rect.y = self.rect.height
         
         # 存储鸡的精确水平位置
         self.x = float(self.rect.x)
         
+    # 移动外星人
     def update(self):
         self.x += (self.settings.ji_speed * self.settings.fleet_direction)
         self.rect.x = self.x

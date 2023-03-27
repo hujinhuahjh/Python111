@@ -1,6 +1,8 @@
 class Settings:
+    # 存储游戏中所有设置的类
     
     def __init__(self):
+        # 初始化游戏设置
         self.screen_width = 1200
         self.screen_height = 680
         self.bg_color = (230, 230, 230)
@@ -24,14 +26,17 @@ class Settings:
         # self.fleet_direction = 1
         self.initialize_dynamic_settings()
     
+    # 重置游戏设置
     def initialize_dynamic_settings(self):
         self.kun_speed = 1.5
         self.bullet_speed = 1
         self.ji_speed = 0.25
         
         self.fleet_direction = 1
+        # 记分
         self.ji_points = 50
         
+    # 游戏节奏的速度控制
     def increase_speed(self):
         self.kun_speed *= self.speedup_scale
         self.bullet_speed *= self.speedup_scale
