@@ -16,7 +16,7 @@ class Settings:
         # self.bullet_width = 3
         # self.bullet_height = 15
         # self.bullet_color = (60, 60, 60)
-        self.bullets_allowed = 8
+        self.bullets_allowed = 5
         
         # 鸡
         # self.ji_speed = 0.25

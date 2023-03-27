@@ -268,7 +268,8 @@ class JiInvasion:
         #     self.bullets.empty()
         #     self._create_fleet()
         self._check_bullet_ji_collisions()
-        
+    
+    # 播放音效   
     def _play_music(self, which, volume, times):
         # 音效
         pygame.mixer.music.load(self.s + '/' + which)
