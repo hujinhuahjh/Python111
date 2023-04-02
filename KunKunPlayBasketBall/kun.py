@@ -13,7 +13,7 @@ class Kun(Sprite):
         
         # 加载坤坤图像并获取外接矩形
         self.image = pygame.image.load('KunKunPlayBasketBall/images/kunkun.png')
-        self.image = pygame.transform.smoothscale(self.image, (100, 100))
+        self.image = pygame.transform.smoothscale(self.image, (66, 100))
         self.rect = self.image.get_rect()
         # 最初位置位于屏幕底部中央
         self.rect.midbottom = self.screen_rect.midbottom
