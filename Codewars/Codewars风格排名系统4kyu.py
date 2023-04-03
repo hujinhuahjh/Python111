@@ -6,32 +6,36 @@ class User:
         self.rank = -8
         self.progress = 0
         
-    def inc_progress(self, topic_rank):
-        if topic_rank > 8 or topic_rank < -8 or topic_rank == 0:
-            raise ValueError
-        if self.rank > topic_rank and self.rank - topic_rank <= 2:
-                self.progress += 1
-        elif self.rank > topic_rank and self.rank - topic_rank > 2:
-            self.progress += 1
-        elif self.rank == topic_rank:
-            self.progress += 3
-        else:
-            if self.rank < 0 and topic_rank > 0:
-                self.progress += ((topic_rank - self.rank - 1) ** 2) * 10
-            else:
-                self.progress += ((topic_rank - self.rank) ** 2) * 10
-        print(topic_rank - self.rank)
-        self.progress_change()
+    def inc_progress(self, activity_rank):
+        if activity_rank not in range(-8, 0) and activity_rank not in range(1, 9):
+            raise ValueError("Invalid rank value")
         
-    def progress_change(self):
-        if self.progress >= 100:
-            flag = False
-            if self.rank < 0:
-                flag = True
-            self.rank += int(self.progress / 100)
-            if self.rank >=0 and flag:
-                self.rank += 1
-            self.progress %= 100
+        rank_diff = activity_rank - self.rank
+        
+        if rank_diff == 0:
+            progress = 3
+        elif rank_diff == -1 or (activity_rank == -1 and self.rank == 1):
+            progress = 1
+        elif rank_diff >= 1:
+            if activity_rank * self.rank <= 0:
+                progress = ((activity_rank - self.rank - 1) ** 2) * 10
+            else:
+                progress = ((activity_rank - self.rank) ** 2) * 10
+        else:
+            progress = 0
+        
+        self.progress += progress
+        
+        pre_rank = self.rank
+        while self.progress >= 100 and self.rank < 8:
+            self.progress -= 100
+            self.rank += 1
+        if self.rank * pre_rank <= 0:
+            self.rank += 1
+            
+        if self.rank >= 8:
+            self.rank = 8
+            self.progress = 0
             
 user = User()
 user.inc_progress(10)

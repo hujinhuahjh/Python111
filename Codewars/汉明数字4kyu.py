@@ -15,4 +15,4 @@ def hamming(n):
             c += 1
     return r[-1]
     
-print(hamming(15));
+print(hamming(15))
