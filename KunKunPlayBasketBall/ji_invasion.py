@@ -45,6 +45,8 @@ class JiInvasion:
         self.jis = pygame.sprite.Group()
         
         self._create_fleet()
+        
+        # 创建按钮
         self.play_button = Button(self, "Music")
         
     def run_game(self):

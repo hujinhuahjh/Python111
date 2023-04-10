@@ -1,1 +1,4 @@
-print(int(254 / 16))
+import pygame
+ZiTi=pygame.font.get_fonts()
+for i in ZiTi:
+   print(i)
