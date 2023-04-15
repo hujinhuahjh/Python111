@@ -1,4 +1,2 @@
-import pygame
-ZiTi=pygame.font.get_fonts()
-for i in ZiTi:
+for i in range(1,7):
    print(i)

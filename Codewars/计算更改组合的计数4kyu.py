@@ -18,6 +18,7 @@
 
 def count_change(money, coins):
     dp = [1] + [0] * money
+    print(dp)
     for coin in coins:
         for x in range(coin, money + 1):
             dp[x] += dp[x-coin]
@@ -25,4 +26,4 @@ def count_change(money, coins):
     print(dp)
     return dp[money]
 
-print(count_change(4, [1,2]))
+print(count_change(6, [1,2,3]))
