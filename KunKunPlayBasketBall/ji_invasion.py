@@ -113,6 +113,19 @@ class JiInvasion:
     # 响应按下play按钮
     def _check_play_button(self, mouse_pos):
         button_clicked = self.play_button.rect.collidepoint(mouse_pos)
+        button_clicked1 = self.play_button.grade_image1_rect.collidepoint(mouse_pos)
+        button_clicked2 = self.play_button.grade_image2_rect.collidepoint(mouse_pos)
+        button_clicked3 = self.play_button.grade_image3_rect.collidepoint(mouse_pos)
+        
+        if button_clicked1:
+            self.settings.speed_init = 1
+            
+        if button_clicked2:
+            self.settings.speed_init = 2
+            
+        if button_clicked3:
+            self.settings.speed_init = 3
+        
         if button_clicked and not self.stats.game_active:
             
             # 音效
