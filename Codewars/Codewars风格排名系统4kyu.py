@@ -1,6 +1,3 @@
-# TODO: create the User class
-# it must support rank, progress, and the inc_progress(rank) method
-
 class User:
     def __init__(self):
         self.rank = -8
@@ -38,6 +35,6 @@ class User:
             self.progress = 0
             
 user = User()
-user.inc_progress(10)
+user.inc_progress(5)
 print(user.progress)
 print(user.rank)

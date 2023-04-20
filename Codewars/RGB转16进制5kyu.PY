@@ -12,4 +12,4 @@ def rgb(r, g, b):
         l.append(dic[i])
     return ''.join(l)
     
-print(rgb(0,0,0))
+print(rgb(234,255,0))

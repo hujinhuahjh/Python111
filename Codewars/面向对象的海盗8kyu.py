@@ -6,4 +6,4 @@ class Ship:
         return self.draft - self.crew * 1.5 > 20
         
 em = Ship(15, 10)
-print(em.is_worth_it)
+print(em.is_worth_it())
