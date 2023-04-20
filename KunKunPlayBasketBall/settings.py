@@ -21,7 +21,7 @@ class Settings:
         
         # 鸡
         # self.ji_speed = 0.25
-        self.fleet_drop_speed = 10
+        self.fleet_drop_speed = 100
         # self.fleet_direction = 1
         
         self.speedup_scale = 1.1
@@ -46,7 +46,6 @@ class Settings:
         # 记分
         self.ji_points = 50 * self.speed_init
         
-        self.fleet_direction = 1
         
     # 游戏节奏的速度控制
     def increase_speed(self):

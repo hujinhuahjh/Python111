@@ -1,4 +1,5 @@
 import sys
+from random import random
 from time import sleep
 
 import pygame
@@ -181,19 +182,21 @@ class JiInvasion:
     # 创建鸡群
     def _create_fleet(self):
         ji = Ji(self)
-        # 计算一行可容纳多少个外星人
+        # 计算一行可容纳多少只鸡
         ji_width, ji_height = ji.rect.size
         available_space_x = self.settings.screen_width - (2 * ji_width)
         number_jis_x = available_space_x // (2 * ji_width)
         
-        # 计算屏幕可容纳多少鸡
+        # 计算屏幕可容纳多少行鸡
         kun_height = self.kun.rect.height
         available_space_y = (self.settings.screen_height - (3 * ji_height) - kun_height - 100)
         number_rows = available_space_y // (2 * ji_height)
         
         for row_number in range(number_rows):
             for ji_number in range(number_jis_x):
-                self._create_ji(ji_number, row_number)
+                a = random()
+                if a > 0.3:
+                    self._create_ji(ji_number, row_number)
     
     
     # 创建一行鸡 
@@ -211,15 +214,15 @@ class JiInvasion:
         for ji in self.jis.sprites():
             # 如果是改变其移动方向
             if ji.check_edges():
-                self._change_fleet_direction()
-                break
+                self._change_fleet_direction(ji)
+                # break
     
     
     # 将鸡群下移并改变运动方向
-    def _change_fleet_direction(self):
-        for ji in self.jis.sprites():
-            ji.rect.y += self.settings.fleet_drop_speed
-        self.settings.fleet_direction *= -1
+    def _change_fleet_direction(self, ji):
+        # for ji in self.jis.sprites():
+        ji.rect.y += self.settings.fleet_drop_speed
+        ji.fleet_direction *= -1
     
     
     # 检测鸡群是否到达了底部

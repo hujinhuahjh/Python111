@@ -17,7 +17,7 @@ class Bullet(Sprite):
         
         # 加载篮球图像
         self.image = pygame.image.load('KunKunPlayBasketBall/images/basketball.png')
-        self.image = pygame.transform.smoothscale(self.image, (40,40))
+        self.image = pygame.transform.smoothscale(self.image, (25,25))
         self.rect = self.image.get_rect()
         self.rect.midtop = ji_game.kun.rect.midtop
         

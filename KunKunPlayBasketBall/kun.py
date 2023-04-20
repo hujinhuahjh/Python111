@@ -29,7 +29,7 @@ class Kun(Sprite):
         self.moving_top = False
         self.moving_bottom = False
     
-    #  根据移动标志调整飞船位置    
+    #  根据移动标志调整坤坤位置    
     def update(self):
         if self.moving_right and self.rect.right < self.screen_rect.right:
             self.x += self.settings.kun_speed
@@ -42,6 +42,7 @@ class Kun(Sprite):
             
         self.rect.x = self.x
         self.rect.y = self.y
+        
             
     def blitme(self):
         # 在指定位置绘制坤坤

@@ -66,8 +66,9 @@ class Scoreboard:
         self.kuns = Group()
         for kun_number in range(self.stats.kuns_left):
             kun = Kun(self.ji_game)
-            kun.rect.x = 10 + kun_number * kun.rect.width
-            kun.rect.y = 10
+            kun.image = pygame.transform.smoothscale(kun.image, (33, 50))
+            kun.rect.x = kun_number * kun.rect.width
+            kun.rect.y = 5
             self.kuns.add(kun)
     
     # 显示在屏幕上

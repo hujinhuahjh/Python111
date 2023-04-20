@@ -1,6 +1,8 @@
 import pygame
 from pygame.sprite import Sprite
 
+import numpy as np
+
 class Ji(Sprite):
     """表示单个鸡的类"""
     
@@ -21,10 +23,15 @@ class Ji(Sprite):
         
         # 存储鸡的精确水平位置
         self.x = float(self.rect.x)
+        self.fleet_direction = 1
+        changes = [-1, 1]
+        change = np.random.choice(changes)
+        self.fleet_direction *= change
+        
         
     # 移动外星人
     def update(self):
-        self.x += (self.settings.ji_speed * self.settings.fleet_direction)
+        self.x += (self.settings.ji_speed * self.fleet_direction)
         self.rect.x = self.x
         
     def check_edges(self):
