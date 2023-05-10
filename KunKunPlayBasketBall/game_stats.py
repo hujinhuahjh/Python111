@@ -10,7 +10,7 @@ class GameStats:
         self.high_score = 0
         
     def reset_stats(self):
-        # 吃石化游戏运行期间可能变化的统计信息
+        # 初始化游戏运行期间可能变化的统计信息
         self.kuns_left = self.settings.kun_limit
         self.score = 0
         self.level = 1

@@ -30,19 +30,19 @@ class Button:
         
     # 将关卡等级渲染成图像并居中
     def _prep_grade1(self):
-        self.grade_image1 = self.font.render("等级1", True, self.text_color, self.button_color)
+        self.grade_image1 = self.font.render("简单模式", True, self.text_color, self.button_color)
         self.grade_image1_rect = self.grade_image1.get_rect()
         self.grade_image1_rect.center = self.msg_image_rect.center
         self.grade_image1_rect.top = self.msg_image_rect.bottom + 20
               
     def _prep_grade2(self):  
-        self.grade_image2 = self.font.render("等级2", True, self.text_color, self.button_color)
+        self.grade_image2 = self.font.render("困难模式", True, self.text_color, self.button_color)
         self.grade_image2_rect = self.grade_image2.get_rect()
         self.grade_image2_rect.center = self.msg_image_rect.center
         self.grade_image2_rect.top = self.grade_image1_rect.bottom + 20
         
     def _prep_grade3(self):
-        self.grade_image3 = self.font.render("等级3", True, self.text_color, self.button_color)
+        self.grade_image3 = self.font.render("地狱模式", True, self.text_color, self.button_color)
         self.grade_image3_rect = self.grade_image3.get_rect()
         self.grade_image3_rect.center = self.msg_image_rect.center
         self.grade_image3_rect.top = self.grade_image2_rect.bottom + 20
