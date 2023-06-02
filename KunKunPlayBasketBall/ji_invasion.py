@@ -72,6 +72,7 @@ class JiInvasion:
     def _check_events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                self.stats.save_high_score()
                 pygame.quit()
                 sys.exit()
             elif event.type == pygame.MOUSEBUTTONDOWN:
@@ -94,6 +95,7 @@ class JiInvasion:
         elif event.key == pygame.K_DOWN:
             self.kun.moving_bottom = True
         elif event.key == pygame.K_q:
+            self.stats.save_high_score()
             pygame.quit()
             sys.exit()
         # 发射篮球
@@ -139,6 +141,7 @@ class JiInvasion:
             
             # 重置得分信息
             self.sb.prep_score()
+            self.sb.prep_high_score()
             self.sb.prep_level()
             self.sb.prep_kuns()
             
